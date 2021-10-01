@@ -1,13 +1,18 @@
 angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function ($scope,contatosAPI,operadorasAPI,serialGenerator) {
     $scope.app = "Lista Telefonica";
     $scope.contatos =[]
+    $scope.operadoras=[]
+    $scope.contato={
+        data:1034218800000
+    }
       
     var carregarContatos = function(){
         contatosAPI.getContatos().then(function (response){ 
             console.log(response.data)
             $scope.contatos =response.data   
         }).catch(function(err) {
-            console.error('Oh não!!', err.statusText);
+            $scope.error="Oh não!!Não foi possivel carregar os dados!"
+            console.error('Oh não!!Não foi possivel carregar os dados', err.statusText);
         });
     }
 
