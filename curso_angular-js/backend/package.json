@@ -4,6 +4,8 @@
   "description": "No sexto episódio da série AngularJS, nós vamos falar sobre como integrar com o back-end por AJAX, utilizando o serviço $http.",
   "main": "index.js",
   "scripts": {
+    "ng": "ng",
+    "start": "ng serve --proxy-config proxy.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,5 +18,8 @@
   ],
   "dependencies": {
     "express": "^3.21.2"
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.1"
   }
 }
